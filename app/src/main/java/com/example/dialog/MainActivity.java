@@ -50,12 +50,6 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback,
             TextView tvText = findViewById(R.id.tvText);
             tvText.setText(MainActivity.contacts);
         }
-
-        SharedPreferences.Editor ed = sp.edit();
-        ed.clear();
-        ed.commit();
-
-
     }
 
     @Override
@@ -119,8 +113,6 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback,
 
             Thread t2 = new Thread(new HiloConexion(handler, true, n.get(0).urlImg));
             t2.start();*/
-
-            //ACA PARSEAR EL JSON
 
         } else if(message.arg1 ==HiloConexion.IMG){
             /*ImageView img = findViewById(R.id.img);
