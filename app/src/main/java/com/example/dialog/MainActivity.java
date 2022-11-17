@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback,
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Segundo Parcial");
 
-        //para que lea la cola de los mensajes y hay que implementar el handler
-        //se dbe implementar antes que el hilo
         this.handler = new Handler(this);
         Log.d("datos",MainActivity.contacts);
         //si la lista está vacia le pega al get
