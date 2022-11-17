@@ -1,5 +1,7 @@
 package com.example.dialog;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -59,10 +61,12 @@ public class ObjectApi {
         }
 
         try {
-            JSONObject jsonObject = new JSONObject(respuesta);
-            JSONArray Objects = jsonObject.getJSONArray("objects");
-            for (int i = 0; i < Objects.length(); i++) {
-                JSONObject object = Objects.getJSONObject(i);
+            //JSONObject jsonObject = new JSONObject(respuesta);
+            JSONArray jsonObject = new JSONArray(respuesta);
+            //JSONArray Objects = jsonObject.getJSONArray(jsonObject);
+            Log.d("jsonObject", jsonObject.toString());
+            for (int i = 0; i < jsonObject.length(); i++) {
+                JSONObject object = jsonObject.getJSONObject(i);
                 Integer id = object.getInt("id");
                 String username = object.getString("username");
                 String role = object.getString("rol");

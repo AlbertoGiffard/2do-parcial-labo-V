@@ -55,13 +55,14 @@ public class ClickDialogo implements DialogInterface.OnClickListener {
     }
 
     private ObjectApi generateObject(){
-        Integer id = MainActivity.objectApiList.get(MainActivity.objectApiList.size()).getId();
+        Integer id = MainActivity.objectApiList.get(MainActivity.objectApiList.size()-1).getId();
         EditText editText = (EditText) this.view.findViewById(R.id.edUsername);
         String valueEditText = editText.getText().toString();
         Spinner spRole = (Spinner) this.view.findViewById(R.id.spRole);
         String spRoleText = spRole.getSelectedItem().toString();
         ToggleButton toggleButton = ((ToggleButton) this.view.findViewById(R.id.tlBtn));
-        ObjectApi objectApi = new ObjectApi(id++, valueEditText, spRoleText, toggleButton.isChecked());
+        Integer newId = id + 1;
+        ObjectApi objectApi = new ObjectApi(newId, valueEditText, spRoleText, toggleButton.isChecked());
 
         return objectApi;
     }

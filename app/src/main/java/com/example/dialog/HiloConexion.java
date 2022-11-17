@@ -42,7 +42,7 @@ public class HiloConexion implements Runnable{
         } else {
             //https://catfact.ninja/fact
             //http://10.112.1.36:3001/usuarios
-            String respuesta = http.consultarUsuarios("http://192.168.137.1:3001/usuarios");
+            String respuesta = http.consultarUsuarios("https://6355acf4da523ceadc05bdbf.mockapi.io/users");
 
             Log.d("Respuesta", respuesta);
             Message message = new Message();

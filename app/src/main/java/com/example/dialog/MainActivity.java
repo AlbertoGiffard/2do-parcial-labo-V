@@ -51,9 +51,11 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback,
             tvText.setText(MainActivity.contacts);
         }
 
-        /*SharedPreferences.Editor ed = sp.edit();
+        SharedPreferences.Editor ed = sp.edit();
         ed.clear();
-        ed.commit();*/
+        ed.commit();
+
+
     }
 
     @Override
@@ -136,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback,
         int counter;
 
         //espera el enter del search
-        Log.d("querysubmit", query);
+        Log.d("querysubmit", String.valueOf(MainActivity.objectApiList.size()));
         for (counter = 0; counter < MainActivity.objectApiList.size(); counter++) {
             if (MainActivity.objectApiList.get(counter).getUsername().equals(query)){
                 //lo encuentra
@@ -159,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback,
     @Override
     public boolean onQueryTextChange(String newText) {
         //cada caratcter que llega
-        Log.d("querytext", newText);
+        //Log.d("querytext", newText);
         return false;
     }
 
